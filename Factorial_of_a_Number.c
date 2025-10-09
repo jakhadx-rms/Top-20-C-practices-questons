@@ -1,4 +1,4 @@
-
+// Code
 #include<stdio.h>
 
 int main() {
@@ -14,4 +14,15 @@ int main() {
 
     printf("Factorial of %d is %d", n, fact);
     return 0;
+
 }
+
+// Algorithm
+
+Start
+Read n
+Set fact = 1
+Repeat from i = 1 to n:
+→ fact = fact * i
+Print fact
+Stop
