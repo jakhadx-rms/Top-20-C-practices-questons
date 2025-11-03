@@ -9,6 +9,6 @@ int main() {
 		n=n/10;
 	}
     printf("revers the Number : %d", rev);
-	return 0;
+	
     return 0;
 }
