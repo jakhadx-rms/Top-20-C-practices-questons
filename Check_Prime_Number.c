@@ -2,7 +2,7 @@
    
 int main() {
    int num;
-  printf("Enter a number of check Prime or not : ");
+  printf("Nnumber of check Prime or not : ");
   scanf("%d",&num);
    
   int i=2;
