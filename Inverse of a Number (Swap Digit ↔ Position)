@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter number: ");
+    scanf("%d", &n);
+
+    int pos = 1;
+    int result = 0;
+
+    while (n > 0) {
+        int digit = n % 10;
+        n /= 10;
+
+        int mul = 1;
+        int i = 1;
+        while (i < digit) {   // converted from for to while
+            mul *= 10;
+            i++;
+        }
+
+        printf("mul : %d\n", mul);
+
+        result += pos * mul;
+        printf("result : %d\n", result);
+
+        pos++;
+    }
+
+    printf("Inverse number: %d", result);
+    return 0;
+}
+
+
+
+
+
+
+
+
