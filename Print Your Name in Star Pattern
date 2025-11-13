@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int i, j;
+
+    // pattern height
+    for (i = 1; i <= 7; i++) {
+
+        // --- Letter A ---
+        for (j = 1; j <= 7; j++) {
+            if (j == 1 && i != 1 || j == 7 && i != 1 || (i == 1 && j > 1 && j < 7) || i == 4)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("  "); // space between letters
+
+        // --- Letter J ---
+        for (j = 1; j <= 7; j++) {
+            if (i == 1 || j == 4 && i != 7 || (i == 7 && j > 1 && j < 4) || (i == 6 && j == 1))
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("  ");
+
+        // --- Letter A ---
+        for (j = 1; j <= 7; j++) {
+            if (j == 1 && i != 1 || j == 7 && i != 1 || (i == 1 && j > 1 && j < 7) || i == 4)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("  ");
+
+        // --- Letter Y ---
+        for (j = 1; j <= 7; j++) {
+            if ((j == i && i <= 4) || (j == 8 - i && i <= 4) || (j == 4 && i > 4))
+                printf("*");
+            else
+                printf(" ");
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
