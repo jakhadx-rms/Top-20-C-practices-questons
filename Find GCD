@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, gcd = 1;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    int min ;
+	if(a < b)min= a ;
+	else min= b;
+	int i = 2;
+    while(i<=min) {
+        if (a % i == 0 && b % i == 0) {
+            gcd = i;
+        }
+        i++;
+    }
+    printf(" %d" ,gcd);
+
+    return 0;
+}
