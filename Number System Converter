@@ -1,0 +1,83 @@
+#include<stdio.h>
+
+int binaryToDecimal(long binary) {
+    int decimal = 0, base = 1, rem;
+    while (binary > 0) {
+        rem = binary % 10;
+        decimal += rem * base;
+        binary /= 10;
+        base *= 2;
+    }
+    return decimal;
+}
+int octalToDecimal(int octal) {
+    int decimal = 0, base = 1, rem;
+    while (octal > 0) {
+        rem = octal % 10;
+        decimal += rem * base;
+        octal /= 10;
+        base *= 8;
+    }
+    return decimal;
+}
+int decimalToOctal(int decimal) {
+    int octal = 0, base = 1, rem;
+    while (decimal > 0) {
+        rem = decimal % 8;
+        octal += rem * base;
+        decimal /= 8;
+        base *= 10;
+    }
+    return octal;
+}
+
+long decimalToBinary(int n) {
+    long binary = 0;
+    int rem, base = 1;
+    while (n > 0) {
+        rem = n % 2;
+        binary += rem * base;
+        n /= 2;
+        base *= 10;
+    }
+    return binary;
+}
+
+int main(){
+	int n,ntp;
+	printf("\n<<--x-- Number canvortor --x-->> \n\n(1) Binary to Decimal\n(2) Binary to Octal\n(3) Octal to Binary\n(4) Octal to Decimal\n(5) Decimal to Binary\n(6) Decimal to Octal\n\n");
+	printf("Enter your choice : ");
+	scanf("%d",&ntp);
+	printf("Enter the Number : ");
+	scanf("%d",&n);
+	
+	if(ntp==1){
+	 binaryToDecimal(n);
+	 printf("Number : %d",binaryToDecimal(n));
+    }
+    if(ntp==3){
+     int decimal = binaryToDecimal(n);
+     long octal = decimalToOctal(decimal);
+     printf("Number : %ld", octal);
+    }
+    if(ntp==3){
+     int decimal = octalToDecimal(n);
+     long binary = decimalToBinary(decimal);
+     printf("Number : %ld", binary);
+    }
+    if(ntp==4){
+	 octalToDecimal(n);
+	 printf("Number : %ld",octalToDecimal(n));
+    }  
+	if(ntp==5){
+	 decimalToBinary(n);
+	 printf("Number : %ld",decimalToBinary(n));
+    }  
+   if(ntp==6){
+	 decimalToOctal(n);
+	 printf("Number : %d",decimalToOctal(n));
+    }
+
+	
+	return 0;
+}
