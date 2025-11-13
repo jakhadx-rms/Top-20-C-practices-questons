@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int m, n;
+    printf("Enter starting number (m): ");
+    scanf("%d", &m);
+    printf("Enter ending number (n): ");
+    scanf("%d", &n);
+
+    printf("Prime numbers between %d and %d are: ", m, n);
+
+    for (int i = m; i <= n; i++) {
+        int isPrime = 1; 
+
+        if (i <= 1) 
+            continue;
+
+        int j = 2;
+        while (j * j <= i) {
+            if (i % j == 0) {
+                isPrime = 0;
+                break;
+            }
+            j++;
+        }
+
+        if (isPrime == 1)
+            printf("%d ", i);
+    }
+
+    return 0;
+}
